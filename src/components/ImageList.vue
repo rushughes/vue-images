@@ -2,8 +2,8 @@
   <div>
     <img
       v-for="image in allImages"
-      :src="image.link"
       :key="image.id"
+      :src="image.link"
     >
   </div>
 </template>
