@@ -21,7 +21,7 @@ export default {
     })
   },
   uploadImages(images, token) {
-    Array.from(images).map(image => {
+    const promises = Array.from(images).map(image => {
       const formData = new FormData();
       formData.append('image', image);
 
@@ -30,6 +30,7 @@ export default {
           Authorization: `Bearer ${token}`
         }
       });
-    })
+    });
+    return Promise.all(promises);
   }
 };
